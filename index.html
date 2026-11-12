@@ -69,6 +69,16 @@ p { margin: 0; }
 .btn:active { transform: translateY(5px); box-shadow: 0 0 0 #a9661a; }
 .btn:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .btn svg { width: 18px; height: 18px; flex: none; }
+.btn.alt { color: var(--text); background: var(--panel); border: 3px solid var(--line); box-shadow: 0 5px 0 var(--panel-deep); padding: 13px 25px; }
+.btn.alt:hover { border-color: var(--gold); box-shadow: 0 3px 0 var(--panel-deep); }
+.btn.alt:active { box-shadow: 0 0 0 var(--panel-deep); }
+.cta .row { display: flex; flex-wrap: wrap; gap: 14px; }
+.cta small a { color: var(--text); }
+.btn.github { color: #ffffff; background: #161616; border: 3px solid #161616; box-shadow: 0 5px 0 #000000; padding: 13px 25px; }
+.btn.github svg { width: 24px; height: 24px; }
+.btn.github:hover { border-color: #ffffff; box-shadow: 0 3px 0 #000000; }
+.btn.github:active { box-shadow: 0 0 0 #000000; }
+.way .btn.github { padding-block: 11px; }
 
 /* hero */
 .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 40px; align-items: center; padding-block: 36px 64px; }
@@ -128,7 +138,16 @@ section > .sub { margin-top: 12px; color: var(--muted); max-width: 56ch; }
 .dl h2 { font-size: clamp(2rem, 5vw, 3.2rem); color: var(--gold); }
 .dl p { margin: 14px auto 0; color: var(--muted); max-width: 48ch; }
 .dl .btn { margin-top: 28px; }
-.dl small { display: block; margin-top: 16px; color: var(--muted); font-size: 0.85rem; overflow-wrap: anywhere; }
+.ways { margin-top: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.way { background: var(--panel-deep); border: 2px solid var(--line); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 8px; text-align: left; min-width: 0; }
+.way h3 { font-size: 1.3rem; color: var(--text); }
+.way p { margin: 0; max-width: none; font-size: 0.95rem; }
+.way .btn { margin-top: auto; align-self: stretch; font-size: 1.05rem; padding-block: 14px; }
+.way .btn.alt { padding-block: 11px; }
+.dl .way .btn { margin-top: auto; }
+.steps { margin: 28px auto 0; max-width: 52ch; text-align: left; color: var(--muted); font-size: 0.95rem; }
+.steps h3 { font-size: 1.15rem; color: var(--text); }
+.steps ol { margin: 10px 0 0; padding-left: 22px; display: grid; gap: 6px; }
 
 .credits { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 28px; }
 .credit { background: var(--panel-deep); border: 2px solid var(--line); border-radius: 14px; padding: 18px 20px; min-width: 0; }
@@ -211,11 +230,17 @@ footer { padding-block: 8px 120px; text-align: center; color: var(--muted); font
       <h1>Seth <span>&amp; Friends</span></h1>
       <p class="lede">A pixel platformer where Seth and his friends fight through 100 stages across tons of biomes and bosses, from jungle and glacier to swamp and the Tyrant Rex.</p>
       <div class="cta">
-        <a class="btn" href="https://github.com/coolplaytree-rgb/Seth-Game/releases/tag/Official">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6 1h4v7h3l-5 6-5-6h3z"/></svg>
-          Download
-        </a>
-        <small>Free. Official release on GitHub.</small>
+        <div class="row">
+          <a class="btn" href="Seth_and_Friends.apk">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6 1h4v7h3l-5 6-5-6h3z"/></svg>
+            Install on Android
+          </a>
+          <a class="btn alt" href="https://coolplaytree-rgb.github.io/Seth-Game/">Play in browser</a>
+          <a class="btn github" href="https://github.com/coolplaytree-rgb/Seth-Game/releases/tag/Official">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            GitHub releases
+          </a>
+        </div>
       </div>
     </div>
     <div class="screen">
@@ -297,14 +322,38 @@ footer { padding-block: 8px 120px; text-align: center; color: var(--muted); font
 
   <section id="download">
     <div class="dl">
-      <p class="label">Official release</p>
+      <p class="label">Get the game</p>
       <h2>Ready to play?</h2>
-      <p>Grab the latest build from the Seth &amp; Friends releases page on GitHub.</p>
-      <a class="btn" href="https://github.com/coolplaytree-rgb/Seth-Game/releases/tag/Official">
-        <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6 1h4v7h3l-5 6-5-6h3z"/></svg>
-        Download
-      </a>
-      <small>github.com/coolplaytree-rgb/Seth-Game</small>
+      <p>Pick how you want to play.</p>
+      <div class="ways">
+        <div class="way">
+          <h3>Install on Android</h3>
+          <p>Download the APK and install it straight to your phone.</p>
+          <a class="btn" href="Seth_and_Friends.apk">Download APK</a>
+        </div>
+        <div class="way">
+          <h3>Play in your browser</h3>
+          <p>Nothing to install. Open the web version and start.</p>
+          <a class="btn alt" href="https://coolplaytree-rgb.github.io/Seth-Game/">Play now</a>
+        </div>
+        <div class="way">
+          <h3>All releases</h3>
+          <p>Every official build, on the GitHub releases page.</p>
+          <a class="btn github" href="https://github.com/coolplaytree-rgb/Seth-Game/releases/tag/Official">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+      <div class="steps">
+        <h3>How to install the APK</h3>
+        <ol>
+          <li>Tap Download APK and wait for it to finish.</li>
+          <li>Open the downloaded file.</li>
+          <li>If Android asks, allow your browser to install apps from this source.</li>
+          <li>Tap Install, then open Seth &amp; Friends.</li>
+        </ol>
+      </div>
     </div>
   </section>
 
